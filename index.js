@@ -10,7 +10,7 @@ function loginOrRegister (params) {
 
     try {
 
-        return axios.post(paramObject.API_ENDPOINT, params.payload, params.header)
+        return axios.post(params.API_ENDPOINT, params.payload, params.header)
             .then(response => {
                 return response
             })

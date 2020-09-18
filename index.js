@@ -19,7 +19,8 @@ function loginOrRegister (params) {
             })
 
     } catch(e) {
-        console.error (errorLogKey)
+        console.error (errorLogKey + ': ' + e.message)
+        return null;
     }
 
 }

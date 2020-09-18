@@ -1,0 +1,31 @@
+{
+  "name": "exp-auth",
+  "version": "1.0.0",
+  "description": "Pacote de integração de autenticação centralizada",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.20.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseseie/exp-auth.git"
+  },
+  "keywords": [
+    "explicador",
+    "auth",
+    "authetication",
+    "developers",
+    "projects",
+    "team"
+  ],
+  "author": "José Seie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joseseie/exp-auth/issues"
+  },
+  "homepage": "https://github.com/joseseie/exp-auth#readme"
+}

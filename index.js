@@ -25,11 +25,18 @@ function handlePostRequest (params) {
 
 }
 
+// Login e criação de conta
 function loginOrRegister(params) {
     return handlePostRequest(params);
 }
 
+// Envio de reset de password
 function sendPasswordResetLink  (params) {
+    return handlePostRequest(params);
+}
+
+// Envio de email de confirmação
+function sendConfirmationEmail  (params) {
     return handlePostRequest(params);
 }
 
@@ -82,3 +89,4 @@ module.exports.loginOrRegister          = loginOrRegister;
 module.exports.composeUserToken         = composeUserToken;
 module.exports.getUserInfoByToken       = getUserInfoByToken;
 module.exports.sendPasswordResetLink    = sendPasswordResetLink;
+module.exports.sendConfirmationEmail    = sendConfirmationEmail;

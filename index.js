@@ -7,14 +7,15 @@ axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 let errorLogKey = 'EXP_LOG'
 
 function handlePostRequest (params) {	
-
     try {
 
-        return axios.post(params.API_ENDPOINT, params.payload, params.header)
-            .then(response => {
+        const axiosRequestSession = (params.method === 'put')
+        ? axios.put(params.API_ENDPOINT, params.payload, params.header) 
+        : axios.post(params.API_ENDPOINT, params.payload, params.header)
+         
+         return axiosRequestSession.then(response => {
                 return response
-            })
-            .catch(error => {
+            }).catch(error => {
                 return error
             })
 
@@ -37,6 +38,11 @@ function sendPasswordResetLink  (params) {
 
 // Envio de email de confirmação
 function sendConfirmationEmail  (params) {
+    return handlePostRequest(params);
+}
+
+function syncUserData  (params) {
+    params.method = 'put'
     return handlePostRequest(params);
 }
 
@@ -90,3 +96,4 @@ module.exports.composeUserToken         = composeUserToken;
 module.exports.getUserInfoByToken       = getUserInfoByToken;
 module.exports.sendPasswordResetLink    = sendPasswordResetLink;
 module.exports.sendConfirmationEmail    = sendConfirmationEmail;
+module.exports.syncUserData             = syncUserData;

@@ -32,17 +32,21 @@ function loginOrRegister(params) {
 }
 
 // Envio de reset de password
-function sendPasswordResetLink  (params) {
+function sendPasswordResetLink (params) {
     return handlePostRequest(params);
 }
 
 // Envio de email de confirmação
-function sendConfirmationEmail  (params) {
+function sendConfirmationEmail (params) {
     return handlePostRequest(params);
 }
 
-function syncUserData  (params) {
+function syncUserData (params) {
     params.method = 'put'
+    return handlePostRequest(params);
+}
+
+function logOut (params) {
     return handlePostRequest(params);
 }
 
@@ -77,7 +81,6 @@ function getUserInfoByToken (params) {
         console.error (errorLogKey + ': Dados do user não buscados, pois o \'Token\' não foi enviado como parametro');
         return; // interrompe a execução
     }
-
     return handlePostRequest({
         API_ENDPOINT: params.API_ENDPOINT,
         header: composeHeader(params.token),
@@ -97,3 +100,4 @@ module.exports.getUserInfoByToken       = getUserInfoByToken;
 module.exports.sendPasswordResetLink    = sendPasswordResetLink;
 module.exports.sendConfirmationEmail    = sendConfirmationEmail;
 module.exports.syncUserData             = syncUserData;
+module.exports.logOut                   = logOut;
